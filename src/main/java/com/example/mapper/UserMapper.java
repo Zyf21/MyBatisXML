@@ -1,11 +1,10 @@
-package com.example.mappers;
-
-import com.example.entities.UserEntity;
+package com.example.mapper;
 
 import java.util.List;
 
-public interface UserMapper {
+import com.example.entities.UserEntity;
 
+public interface UserMapper {
 
     List<UserEntity> getAll();
 

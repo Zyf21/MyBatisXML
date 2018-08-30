@@ -2,23 +2,26 @@ package com.example.entities;
 
 import java.io.Serializable;
 
+
+
 public class UserEntity implements Serializable {
 
-
+    private static final long serialVersionUID = 1L;
     private Long id;
     private String userName;
     private String passWord;
-    private String nickName;
 
+    private String nickName;
 
     public UserEntity() {
         super();
     }
 
-    public UserEntity(String userName, String passWord, String nickName) {
-        this.userName = userName;
+    public UserEntity(String userName, String passWord) {
+        super();
         this.passWord = passWord;
-        this.nickName = nickName;
+        this.userName = userName;
+
     }
 
     public Long getId() {
@@ -45,6 +48,7 @@ public class UserEntity implements Serializable {
         this.passWord = passWord;
     }
 
+
     public String getNickName() {
         return nickName;
     }
@@ -55,11 +59,8 @@ public class UserEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "UserEntity{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", passWord='" + passWord + '\'' +
-                ", nickName='" + nickName + '\'' +
-                '}';
+        // TODO Auto-generated method stub
+        return "userName " + this.userName + ", pasword " + this.passWord + "sex " ;
     }
+
 }

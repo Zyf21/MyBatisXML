@@ -1,16 +1,18 @@
 package com.example.controllers;
 
-import com.example.entities.UserEntity;
-import com.example.mappers.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.entities.UserEntity;
+import com.example.mapper.UserMapper;
+
 @RestController
 public class UserController {
-
 
     @Autowired
     private UserMapper userMapper;
@@ -31,4 +33,16 @@ public class UserController {
     public void save(UserEntity user) {
         userMapper.insert(user);
     }
+
+    @RequestMapping(value="update")
+    public void update(UserEntity user) {
+        userMapper.update(user);
+    }
+
+    @RequestMapping(value="/delete/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        userMapper.delete(id);
+    }
+
+
 }
